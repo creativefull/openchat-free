@@ -50,8 +50,8 @@
 <script>
 	Notification.requestPermission();
 
-	// var socket = io("http://server-muzaki.rhcloud.com");
-	var socket = io("http://localhost:8080");
+	var socket = io("http://server-muzaki.rhcloud.com");
+	// var socket = io("http://localhost:8080");
 	var uniqueID = "ID-"+(new Date()).getTime().toString();
 	localStorage.id = uniqueID;
 	socket.emit("new user", { id : uniqueID });
