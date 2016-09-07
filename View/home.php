@@ -62,10 +62,9 @@
 			$("#chat-box").html("");
 			data.data.forEach(function(doc) {
 				var image = doc.img || "Public/themes/AdminLTE/dist/img/user2-160x160.jpg";
-				var element = "<div class=\"item\" tabindex=\"0\"><img src=\"" + image + "\" alt=\"user image\" class=\"online\"><p class=\"message\"><a href=\"#\" class=\"name\"><small class=\"text-muted pull-right\"><i class=\"fa fa-clock-o\"></i> " + doc.time + "</small>" + doc.name + "</a> <p class=\"pesan\">" + doc.msg + "</p></p></div>";
-				element = $(element).find(".pesan").text("Ngonok");
-				console.log(element);
+				var element = "<div class=\"item\" tabindex=\"0\"><img src=\"" + image + "\" alt=\"user image\" class=\"online\"><p class=\"message\"><a href=\"#\" class=\"name\"><small class=\"text-muted pull-right\"><i class=\"fa fa-clock-o\"></i> " + doc.time + "</small>" + doc.name + "</a> <span class=\"pesan\"></span></p></div>";
 				$("#chat-box").append(element);
+				$("#chat-box .item .pesan").last().text(doc.msg);
 			})
 		}
 	})
